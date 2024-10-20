@@ -3,9 +3,10 @@ const { createTodo }= require("./types")
 const{ updateTodo }= require("./types")
 const { todo } = require("./db")
 const app = express()
+const cors = require("cors")
 
 app.use(express.json())
-
+app.use(cors())
 
 app.post("/todo" , async(req, res)=>{
     const createPayload = req.body;
